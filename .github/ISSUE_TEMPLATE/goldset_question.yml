@@ -1,0 +1,48 @@
+name: New gold-set question
+description: Propose a question for the built-in gold set
+labels: ["gold-set"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing a question. The best ones have an answer a reviewer can check, ideally a number.
+        Please write it in your own words: no client data and nothing copied from exam or training material.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Exactly as it should be sent to the model.
+      placeholder: Compute the yield to maturity of ... Return JSON {"ytm_pct": <float>}.
+    validations:
+      required: true
+  - type: dropdown
+    id: checks
+    attributes:
+      label: How should it be graded?
+      multiple: true
+      options:
+        - numeric (one right number, within a tolerance)
+        - keyword (expected / forbidden keywords)
+        - refusal (the model should decline)
+        - json (the whole answer must be JSON)
+    validations:
+      required: true
+  - type: textarea
+    id: answer
+    attributes:
+      label: Expected answer
+      description: For numeric questions, the JSON key, the value, the tolerance and the working. For keyword questions, the keywords and why they are the right test.
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: Category
+      placeholder: domain, easy, refusal, format, adversarial ...
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: This question contains no proprietary or client data and is not copied from paid exam or training material.
+          required: true
