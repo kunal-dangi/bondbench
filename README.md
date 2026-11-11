@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/rohanjindal-pm/bondbench/actions/workflows/ci.yml/badge.svg)](https://github.com/rohanjindal-pm/bondbench/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/bondbench.svg)](https://pypi.org/project/bondbench/)
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)
 
 A small eval harness and gold set for testing LLMs on fixed-income and
@@ -28,7 +29,7 @@ Each question opts into the checks that make sense for it.
 ## Install
 
 ```bash
-pip install "bondbench[all] @ git+https://github.com/rohanjindal-pm/bondbench"
+pip install "bondbench[all]"
 ```
 
 Use `[openai]` or `[anthropic]` instead of `[all]` if you only need one
